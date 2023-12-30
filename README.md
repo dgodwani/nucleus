@@ -25,6 +25,31 @@ npm init -y
 ```
 This command generates a package.json file with default configurations for your project. It's a quick way to set up a new Node.js project without having to answer a series of questions interactively.
 
+## Step 2: Setup Dependencies
+Since we are building a component library, all of the dependencies must live in `devDependencies`. 
+
+Use the following command to install the necessary development dependencies for your component library 
+```bash
+npm install -D react @types/react typescript prettier eslint @typescript-eslint/parser eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-storybook @typescript-eslint/eslint-plugin
+```
+This command installs React, TypeScript type definitions for React, TypeScript, Prettier, and ESLint with essential plugins for React and Storybook support. The -D flag indicates that these dependencies are for development purposes.
+
+Dependencies:
+- 🚀 **react:** Core UI library.
+- 📘 **@types/react:** TypeScript definitions for React.
+- 📝 **typescript:** Superset for static typing.
+- 💄 **prettier:** Opinionated code formatter.
+- 🚨 **eslint:** Pluggable JS/TS linter.
+- 🚀 **@typescript-eslint/parser:** TypeScript parser for ESLint.
+- 📜 **eslint-config-prettier:** ESLint config for Prettier.
+- 📝 **eslint-plugin-prettier:** ESLint plugin for Prettier.
+- ⚛️ **eslint-plugin-react:** ESLint plugin for React.
+- 🔄 **eslint-plugin-react-hooks:** ESLint plugin for React Hooks.
+- 📚 **eslint-plugin-storybook:** ESLint plugin for Storybook.
+- 🚀 **@typescript-eslint/eslint-plugin:** ESLint plugin for TypeScript.
+
+Feel free to include any additional  dependencies or libraries your project may require by appending them to the command.
+
 
 
 

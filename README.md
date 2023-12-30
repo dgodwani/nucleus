@@ -61,7 +61,7 @@ npm install -D prettier
 ```
 ### Step 2: Create a `.prettierrc` file
 Create a .prettierrc file in the root of your project to configure Prettier. Add the following content to set up basic formatting rules:
-```json
+```bash
 {
   "semi": false,
   "singleQuote": true,
@@ -106,7 +106,7 @@ These are just a few examples, and Prettier provides many more configuration opt
 
 ### Step 3: Add Prettier Script to `package.json`
 Update your package.json file to include a script that runs Prettier. Add the following script under the "scripts" section:
-```json
+```bash
 {
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'"

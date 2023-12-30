@@ -1,0 +1,32 @@
+{
+  "name": "nucleus",
+  "version": "1.0.0",
+  "description": "Design System Starter Using React, Typescript, Storybook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgodwani/nucleus.git"
+  },
+  "keywords": [
+    "React",
+    "UI",
+    "Design System",
+    "Components",
+    "Storybook",
+    "TypeScript",
+    "Vite",
+    "EsLint",
+    "Prettier",
+    "Vitest",
+    "Husky"
+  ],
+  "author": "Dhaval Godwani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgodwani/nucleus/issues"
+  },
+  "homepage": "https://github.com/dgodwani/nucleus#readme"
+}

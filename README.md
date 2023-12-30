@@ -74,23 +74,28 @@ Create a .prettierrc file in the root of your project to configure Prettier. Add
 <details>
   <summary><b>Explanation of Configurations:</b></summary>
 
-  semi (default: true):
+
+#### semi (default: true):
 
 Controls whether to add a semicolon at the end of statements.
 Example: "semi": false would remove semicolons.
-singleQuote (default: false):
+
+#### singleQuote (default: false):
 
 Enforces the use of single quotes for string literals.
 Example: "singleQuote": true would use single quotes.
-tabWidth (default: 2):
+
+#### tabWidth (default: 2):
 
 Sets the number of spaces per indentation level when using spaces.
 Example: "tabWidth": 4 would use 4 spaces for indentation.
-useTabs (default: false):
+
+#### useTabs (default: false):
 
 Controls whether to use tabs for indentation instead of spaces.
 Example: "useTabs": true would use tabs for indentation.
-printWidth (default: 80):
+
+#### printWidth (default: 80):
 
 Specifies the maximum line width before formatting is applied.
 Example: "printWidth": 100 would allow lines up to 100 characters.

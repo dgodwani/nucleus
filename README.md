@@ -212,3 +212,71 @@ This attempts to automatically fix ESLint issues.
 npm run lint:fix
 ```
 By following these steps, you've successfully set up and configured ESLint for your project.
+
+
+## Setup TypeScript
+
+### Step 1: Install TypeScript
+If you haven't already installed TypeScript, you can do so using the following command:
+```bash
+npm install -D typescript
+```
+
+### Step 2: Create tsconfig.json file
+Create a tsconfig.json file in the root of your project to configure TypeScript. Add the following content:
+```bash
+{
+  // TypeScript Compiler Options
+  "compilerOptions": {
+    "target": "es5",                           // ECMAScript target version
+    "lib": ["dom", "es2015", "es2017", "es2020", "DOM.Iterable"], // Included libraries
+    "jsx": "react-jsx",                       // JSX support for React
+    "module": "ESNext",                       // Module system
+    "strict": true,                           // Enable strict mode
+    "esModuleInterop": true,                   // Compatibility with CommonJS
+    "skipLibCheck": true,                      // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true,  // Enforce consistent file naming
+    "useDefineForClassFields": true,          // Use define for class fields
+    "moduleResolution": "bundler",            // Module resolution strategy
+    "allowImportingTsExtensions": true,       // Allow importing TypeScript extensions
+    "noEmit": true,                           // Do not emit output files
+    "resolveJsonModule": true,                // Enable importing of JSON modules
+    "isolatedModules": true,                  // Ensure each file is treated as a separate module
+    "noUnusedLocals": true,                   // Report errors on unused locals
+    "noUnusedParameters": true,               // Report errors on unused parameters
+    "noFallthroughCasesInSwitch": true,       // Report errors for fallthrough cases in switch statements
+    "declaration": true                       // Generate corresponding .d.ts files
+  },
+
+  // Files to include and exclude
+  "include": ["src/**/*"],                    // Include files for compilation
+  "exclude": ["src/**/__docs__","src/**/__test__", "node_modules"]  // Exclude files from compilation
+}
+```
+
+For more TypeScript configuration options, refer to the [official TypeScript documentation](https://www.typescriptlang.org/tsconfig). Adjust the configurations based on your project's requirements
+
+### Step 3: Add a Sample TypeScript File
+create a `src` folder in the root of your project and create a sample typscript file. 
+For example, create file named index.ts with the following content 
+```bash
+// index.ts
+
+const message: string = "Hello, TypeScript!";
+console.log(message);
+```
+
+### Step 4: Add TypeScript Scripts to package.json
+Update your package.json file to include scripts that run TypeScript. Add the following scripts under the "scripts" section:
+```bash
+{
+  "scripts": {
+    "build": "tsc",
+    // Add other TypeScript scripts as needed
+  },
+  // ... other configurations
+}
+```
+These scripts allows to build your TypeScript code using npm run build.
+
+By following these steps, you've successfully set up and configured TypeScript for your project, and added a sample TypeScript file.

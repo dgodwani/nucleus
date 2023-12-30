@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

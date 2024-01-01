@@ -422,3 +422,47 @@ export * from './button';
 ```
 Congratulations! We've added the first component to our library.
 
+## Setting up Storybook.
+Let's enhance our development workflow by integrating Storybook, a powerful tool for building UI components in isolation.
+
+### Step 1: Install Storybook
+
+Run the following command to integrate storybook in this project
+```bash
+npx storybook@latest init
+```
+Since we've already set up Vite, Storybook will detect it as a runner and automatically add the .storybook folder along with the required script in the package.json file.
+
+This will also auto generate example stories under src folder. We can delete the Example stories. 
+
+Ensure each component has its __docs__ own directory, and to that, we will add our stories. To do that, update the stories field in the .storybook/main.ts file:
+
+```bash
+stories: ["../src/**/__docs__/*.stories.tsx", "../src/**/__docs__/*.mdx"],
+```
+
+### Step 2: Create a Button Story
+Inside the src/atoms/button folder, create a file named `Button.stories.tsx`:
+
+```ts
+// src/atoms/button/Button.stories.tsx
+
+import React from 'react';
+import Button from '../Button';
+
+export default {
+  title: 'Atoms/Button',
+  component: Button,
+};
+
+export const Default = () => <Button />;
+```
+
+### Step 3: Run Storybook
+Start Storybook by running the following command:
+```bash
+npm run storybook
+```
+Visit http://localhost:6006 in your browser to see your Button component in Storybook.
+
+Congratulations! We've successfully integrated and configured Storybook for our React TypeScript library.

@@ -280,3 +280,54 @@ Update your package.json file to include scripts that run TypeScript. Add the fo
 These scripts allows to build your TypeScript code using npm run build.
 
 By following these steps, you've successfully set up and configured TypeScript for your project, and added a sample TypeScript file.
+
+## Configure Vite
+
+### Step 1: Install Vite
+```bash
+npm install -D vite vite-plugin-dts
+```
+
+### Step 2: Create Vite Configuration File
+Create a `vite.config.ts` file in the root of your project to configure Vite. Add the following content:
+
+```bash
+
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+import { peerDependencies } from "./package.json";
+
+export default defineConfig({
+  build: {
+    lib: {
+      entry: "./src/index.ts", // Entry point for library.
+      name: "vite-react-ts-button", // Library name.
+      fileName: (format) => `index.${format}.js`, // Output file name.
+      formats: ["cjs", "es"], // Output formats (CommonJS and ES modules).
+    },
+    rollupOptions: {
+      external: [...Object.keys(peerDependencies)], // External dependencies for Rollup.
+    },
+    sourcemap: true, // Generate source maps.
+    emptyOutDir: true, // Clear output directory before building.
+  },
+  plugins: [dts()], // Use 'vite-plugin-dts' for TypeScript declaration files.
+});
+```
+
+### Step 3: Add Vite Scripts to package.json
+Update your package.json file to include scripts that run Vite. Add the following scripts under the "scripts" section:
+```bash 
+{
+  "scripts": {
+    "build": "tsc && vite build" 
+    // ... other scripts as needed
+  },
+  // ... other configurations
+}
+```
+### Step 4: Verify build 
+Use `npm run build` command to build your project. 
+Verify if the dist folder is create succesfully with required files. 
+
+By following these steps, you've successfully set up and configured Vite with TypeScript for your project.

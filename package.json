@@ -2,13 +2,19 @@
   "name": "nucleus",
   "version": "1.0.0",
   "description": "Design System Starter Using React, Typescript, Storybook",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "type": "module",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
-    "build": "tsc"
+    "build": "tsc && vite build"
   },
   "repository": {
     "type": "git",
@@ -45,6 +51,11 @@
     "eslint-plugin-storybook": "^0.6.15",
     "prettier": "^3.1.1",
     "react": "^18.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vite-plugin-dts": "^3.7.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }

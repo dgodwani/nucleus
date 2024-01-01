@@ -367,7 +367,58 @@ project-root
 ├── vite.config.ts      // Vite configuration file
 ├── tsconfig.json       // TypeScript configuration file
 └── package.json        // Project configuration and dependencies
+```
 
 This structure separates components into different categories (Atoms, Molecules, Organisms, Templates, Pages) and provides sample subfolders for each component. Each component folder includes __docs__ for documentation, __test__ for testing, index.ts as a barrel file, and {component-name}.tsx for the component implementation.
 
 Adjust the structure based on your specific project needs and conventions.
+
+## Creating First Component
+Now that we have the project structure in place, let's add the first component to kickstart our library.
+
+### Step 1: Create a Button Component
+Inside the `src/atoms` folder, create a new folder named `button`:
+
+```plaintext
+project-root
+│
+└── src
+    └── atoms
+        └── button
+```
+
+### Step 2: Implement Button Component
+Inside the newly created button folder, add a file named Button.tsx. This file will contain the implementation of our first component:
+
+```typescript
+// src/atoms/button/Button.tsx
+
+import React from 'react';
+
+const Button: React.FC = () => {
+  return <button>Click me</button>;
+};
+
+export default Button;
+```
+
+### Step 3: Export Button from index.ts
+
+In the same button folder, create an index.ts file and export the Button component:
+
+```typescript
+// src/atoms/button/index.ts
+
+export { default as Button } from './Button';
+```
+
+### Step 4: Export Components from Atoms directory
+In the Atoms folder, create an index.ts file and export the Button folder from here as well:
+```typescript
+// src/atoms/index.ts
+
+export * from './button';
+
+```
+Congratulations! We've added the first component to our library.
+

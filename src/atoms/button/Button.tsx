@@ -1,19 +1,8 @@
 // components/button/button.tsx
-import React from "react";
+import React from 'react'
 
-export type ButtonProps = {};
+const Button: React.FC = ({}) => {
+  return <button> Click Me </button>
+}
 
-
-
-const Button: React.FC<ButtonProps> = ({
-  ...props
-}) => {
-  return (
-    <Button
-      {...props}
-    >
-    </Button>
-  );
-};
-
-export default Button;
+export default Button

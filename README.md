@@ -331,3 +331,43 @@ Use `npm run build` command to build your project.
 Verify if the dist folder is create succesfully with required files. 
 
 By following these steps, you've successfully set up and configured Vite with TypeScript for your project.
+
+## Directory Structure
+I have used below project structured for this starter to organise the React components. 
+
+
+```plaintext
+project-root
+│
+├── src
+│   ├── atoms
+│   │   └── button
+│   │       ├── __docs__     // Documentation for the Button component
+│   │       ├── __test__     // Test files for the Button component
+│   │       ├── index.ts     // Barrel file for the Button component
+│   │       └── Button.tsx   // Sample implementation of the Button component
+│   │
+│   ├── molecules
+│   │   └── ...
+│   │
+│   ├── organisms
+│   │   └── ...
+│   │
+│   ├── templates
+│   │   └── ...
+│   │
+│   └── pages
+│       └── ...
+│
+├── dist                // Output directory for compiled files
+│   ├── index.cjs.js    // CommonJS module
+│   ├── index.es.js     // ES module
+│   └── index.d.ts      // TypeScript declaration file
+│
+├── vite.config.ts      // Vite configuration file
+├── tsconfig.json       // TypeScript configuration file
+└── package.json        // Project configuration and dependencies
+
+This structure separates components into different categories (Atoms, Molecules, Organisms, Templates, Pages) and provides sample subfolders for each component. Each component folder includes __docs__ for documentation, __test__ for testing, index.ts as a barrel file, and {component-name}.tsx for the component implementation.
+
+Adjust the structure based on your specific project needs and conventions.
